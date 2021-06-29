@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_boss/common/config/config.dart';
+import 'package:flutter_boss/common/data/json_data_list.dart';
 import 'package:flutter_boss/common/widget/scroll_img_item.dart';
 import 'package:flutter_boss/model/company.dart';
 import 'package:flutter_boss/model/company_detail.dart';
@@ -31,6 +32,8 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
 //  double _end = -100.0;
 
   Future<CompanyDetail> _fetchCompany() async {
+    CompanyDetail companyDetail = CompanyDetail.fromJson(JsonDataList.getCompanyDetailData());
+    return companyDetail;
     final response = await http
         .get('${Config.BASE_URL}/companyDetail/5c3b757fffd9a60984d706c6');
     if (response.statusCode == 200) {

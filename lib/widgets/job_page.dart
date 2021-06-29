@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_boss/common/config/config.dart';
-import 'package:flutter_boss/common/data/job_list_json.dart';
+import 'package:flutter_boss/common/data/json_data_list.dart';
 import 'package:flutter_boss/model/job.dart';
 import 'package:flutter_boss/widgets/job/job_item.dart';
 import 'package:http/http.dart' as http;
@@ -33,7 +33,7 @@ class _JobPageState extends State<JobPage> with AutomaticKeepAliveClientMixin {
   }
 
   Widget _createListView() {
-    List<Map<String,dynamic>> tempList = JobListJson.getData();
+    List<Map<String,dynamic>> tempList = JsonDataList.getJobData();
     List<Job> jobList = tempList.map((e){
       return Job.fromJson(e);
     }).toList();

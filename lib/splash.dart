@@ -9,7 +9,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class SplashState extends State<SplashPage> {
-  Timer _t;
+  late Timer _t;
 
   @override
   void initState() {
@@ -22,7 +22,7 @@ class SplashState extends State<SplashPage> {
                   Animation<double> secondaryAnimation) {
                 return AnimatedBuilder(
                   animation: animation,
-                  builder: (BuildContext context, Widget child) {
+                  builder: (BuildContext context, Widget? child) {
                     return Opacity(
                       opacity: animation.value,
                       child: new MainPage(title: 'Boss直聘'),

@@ -1,12 +1,12 @@
 class Job {
-  final String id;
-  final String title;
-  final String salary;
-  final String company;
-  final String info;
-  final String category;
-  final String head;
-  final String publish;
+  final String? id;
+  final String? title;
+  final String? salary;
+  final String? company;
+  final String? info;
+  final String? category;
+  final String? head;
+  final String? publish;
 
   Job(
       {this.id,

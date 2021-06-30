@@ -1,9 +1,9 @@
 class Company {
-  final String id;
-  final String company;
-  final String logo;
-  final String info;
-  final String hot;
+  final String? id;
+  final String? company;
+  final String? logo;
+  final String? info;
+  final String? hot;
 
   Company({this.id, this.company, this.logo, this.info, this.hot});
 

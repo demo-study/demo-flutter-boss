@@ -1,7 +1,7 @@
 class CompanyDetail {
-  final String id;
-  final String inc;
-  final List companyImgsResult;
+  final String? id;
+  final String? inc;
+  final List? companyImgsResult;
 
   CompanyDetail({this.id, this.inc, this.companyImgsResult});
 
@@ -9,6 +9,6 @@ class CompanyDetail {
     return CompanyDetail(
         id: json['id'],
         inc: json['inc'],
-        companyImgsResult: json['companyImgsResult'] as List);
+        companyImgsResult: json['companyImgsResult'] as List?);
   }
 }

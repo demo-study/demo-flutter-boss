@@ -11,7 +11,7 @@ enum LayoutType {
   mine,
 }
 
-String layoutName(LayoutType layoutType) {
+String layoutName(LayoutType? layoutType) {
   switch (layoutType) {
     case LayoutType.job:
       return '职位';

@@ -12,7 +12,7 @@ class JobPage extends StatefulWidget {
 }
 
 class _JobPageState extends State<JobPage> with AutomaticKeepAliveClientMixin {
-  List<Job> jobList = List<Job>();
+  List<Job> jobList = <Job>[];
 
   @override
   bool get wantKeepAlive => true;

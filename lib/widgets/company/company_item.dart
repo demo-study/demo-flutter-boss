@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boss/model/company.dart';
 
 class CompanyItem extends StatelessWidget {
-  final Company company;
+  final Company? company;
   final String heroLogo;
 
-  CompanyItem({Key key, this.company, this.onPressed, @required this.heroLogo})
+  CompanyItem({Key? key, this.company, this.onPressed, required this.heroLogo})
       : super(key: key);
-  VoidCallback onPressed;
+  VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class CompanyItem extends StatelessWidget {
                   child: Hero(
                     tag: heroLogo,
                     child: Image.network(
-                      company.logo,
+                      company!.logo!,
                       width: 40,
                     ),
                   ),
@@ -40,12 +40,12 @@ class CompanyItem extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(bottom: 6.0),
                       child: Text(
-                        company.company,
+                        company!.company!,
                         style: new TextStyle(color: Colors.black, fontSize: 16),
                       ),
                     ),
                     Text(
-                      company.info,
+                      company!.info!,
                       style: new TextStyle(color: Colors.grey, fontSize: 12),
                     ),
                   ],
@@ -60,7 +60,7 @@ class CompanyItem extends StatelessWidget {
                   top: 3.0, bottom: 3.0, left: 8.0, right: 8.0),
               margin: const EdgeInsets.only(top: 12.0),
               child: Text(
-                company.hot,
+                company!.hot!,
                 style: new TextStyle(color: new Color(0xFF9fa3b0)),
               ),
             ),

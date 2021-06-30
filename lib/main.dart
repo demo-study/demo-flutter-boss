@@ -10,10 +10,10 @@ import 'package:flutter_boss/layout_type.dart';
 void main() => runApp(new App());
 
 class App extends StatelessWidget {
-  final Store<int> store;
-  final String title;
+  final Store<int>? store;
+  final String? title;
 
-  App({Key key, this.store, this.title}) : super(key: key);
+  App({Key? key, this.store, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +31,8 @@ class App extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
-  MainPage({Key key, this.title}) : super(key: key);
-  final String title;
+  MainPage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MainPageState createState() => new _MainPageState();
@@ -41,12 +41,12 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   LayoutType _layoutSelection = LayoutType.job;
 
-  Color _colorTabMatching({LayoutType layoutSelection}) {
+  Color? _colorTabMatching({LayoutType? layoutSelection}) {
     return _layoutSelection == layoutSelection ? Colors.cyan[300] : Colors.grey;
   }
 
   BottomNavigationBarItem _buildItem(
-      {String icon, LayoutType layoutSelection}) {
+      {required String icon, LayoutType? layoutSelection}) {
     String text = layoutName(layoutSelection);
     return BottomNavigationBarItem(
       icon: new Image.asset(

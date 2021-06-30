@@ -5,9 +5,9 @@ class GalleryPage extends StatelessWidget {
   final String heroTag;
 
   GalleryPage(
-      {Key key,
-      @required this.url,
-      @required this.heroTag})
+      {Key? key,
+      required this.url,
+      required this.heroTag})
       : super(key: key);
 
   @override

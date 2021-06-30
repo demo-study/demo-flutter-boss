@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class WelfareItem extends StatelessWidget {
-  WelfareItem({Key key, this.iconData, this.title}) : super(key: key);
+  WelfareItem({Key? key, this.iconData, this.title}) : super(key: key);
 
-  final IconData iconData;
-  final String title;
+  final IconData? iconData;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class WelfareItem extends StatelessWidget {
             padding: EdgeInsets.only(top: 8.0),
           ),
           Text(
-            title,
+            title!,
             style: new TextStyle(color: Colors.white, fontSize: 18.0),
           ),
         ],

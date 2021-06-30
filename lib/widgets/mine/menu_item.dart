@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {
-  MenuItem({Key key, this.icon, this.title, this.onPressed}) : super(key: key);
+  MenuItem({Key? key, this.icon, this.title, this.onPressed}) : super(key: key);
 
-  final IconData icon;
-  final String title;
-  final VoidCallback onPressed;
+  final IconData? icon;
+  final String? title;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class MenuItem extends StatelessWidget {
                 ),
                 new Expanded(
                   child: new Text(
-                    title,
+                    title!,
                     style: new TextStyle(color: Colors.black54, fontSize: 16.0),
                   ),
                 ),

@@ -14,7 +14,7 @@ class CompanyPage extends StatefulWidget {
 
 class _CompanyPageState extends State<CompanyPage>
     with AutomaticKeepAliveClientMixin {
-  List<Company> companyList = List<Company>();
+  List<Company> companyList = <Company>[];
 
   @override
   bool get wantKeepAlive => true;

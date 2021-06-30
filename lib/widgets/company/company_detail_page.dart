@@ -13,7 +13,7 @@ class CompanyDetailPage extends StatefulWidget {
   final Company company;
   final String heroLogo;
 
-  CompanyDetailPage({Key key, @required this.company, @required this.heroLogo})
+  CompanyDetailPage({Key? key, required this.company, required this.heroLogo})
       : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class CompanyDetailPage extends StatefulWidget {
 
 class _CompanyDetailPageState extends State<CompanyDetailPage>
     with SingleTickerProviderStateMixin {
-  ScrollController _scrollController;
+  ScrollController? _scrollController;
   bool _isShow = false;
 
 //  Animation<double> animation;
@@ -45,9 +45,9 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
 
   _scrollListener() {
     setState(() {
-      if (_scrollController.offset < 56 && _isShow) {
+      if (_scrollController!.offset < 56 && _isShow) {
         _isShow = false;
-      } else if (_scrollController.offset >= 56 && _isShow == false) {
+      } else if (_scrollController!.offset >= 56 && _isShow == false) {
         _isShow = true;
       }
     });
@@ -64,7 +64,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
   @override
   void initState() {
     _scrollController = ScrollController();
-    _scrollController.addListener(_scrollListener);
+    _scrollController!.addListener(_scrollListener);
     super.initState();
 //    _animationController = AnimationController(
 //        duration: const Duration(milliseconds: 300), vsync: this);
@@ -88,8 +88,8 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
   @override
   void dispose() {
 //    _animationController.dispose();
-    _scrollController.removeListener(_scrollListener);
-    _scrollController.dispose();
+    _scrollController!.removeListener(_scrollListener);
+    _scrollController!.dispose();
     super.dispose();
   }
 
@@ -104,7 +104,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
               colorFilter: new ColorFilter.mode(
                   Colors.black.withOpacity(0.1), BlendMode.dstATop),
               fit: BoxFit.cover,
-              image: new NetworkImage(widget.company.logo),
+              image: new NetworkImage(widget.company.logo!),
               alignment: Alignment.center),
         ),
         child: _companyDetailView(context),
@@ -127,7 +127,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
                   new Color.fromARGB(_isShow == true ? 255 : 0, 68, 76, 96),
               centerTitle: false,
               title: new Text(
-                widget.company.company,
+                widget.company.company!,
                 style: new TextStyle(
                   fontSize: 20.0,
                   color: new Color.fromARGB(
@@ -192,7 +192,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
                           child: ClipRRect(
                             borderRadius: new BorderRadius.circular(8.0),
                             child: Image.network(
-                              widget.company.logo,
+                              widget.company.logo!,
                               width: 70,
                               height: 70,
                             ),
@@ -384,7 +384,7 @@ class _CompanyDetailPageState extends State<CompanyDetailPage>
                     Animation<double> secondaryAnimation) {
                   return AnimatedBuilder(
                     animation: animation,
-                    builder: (BuildContext context, Widget child) {
+                    builder: (BuildContext context, Widget? child) {
                       return Opacity(
                         opacity: animation.value,
                         child: GalleryPage(
